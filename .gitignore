@@ -1,0 +1,23 @@
+# Dependencies
+node_modules/
+npm-debug.log*
+
+# Environment variables
+.env
+.env.local
+
+# Session data
+.wwebjs_auth/
+*.session*
+*.session-*
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Replit files (jangan commit ke GitHub tapi perlu di Replit)
+# .replit
+# replit.nix
+
+# QRIS file (jika ada)
+qris.png
