@@ -113,17 +113,23 @@ const client = new Client({
     dataPath: "./.wwebjs_auth",
   }),
   puppeteer: {
-    headless: false,
-    args: [
-      "--no-sandbox",
-      "--disable-setuid-sandbox",
-      "--disable-dev-shm-usage",
-      "--disable-accelerated-2d-canvas",
-      "--no-first-run",
-      "--no-zygote",
-      "--disable-gpu",
-    ],
-  },
+  headless: true,  // Ubah ke true untuk Replit
+  args: [
+    '--no-sandbox',
+    '--disable-setuid-sandbox',
+    '--disable-dev-shm-usage',
+    '--disable-accelerated-2d-canvas',
+    '--no-first-run',
+    '--no-zygote',
+    '--single-process',
+    '--disable-gpu',
+    '--disable-extensions',
+    '--disable-software-rasterizer',
+    '--disable-features=VizDisplayCompositor',
+    '--disable-features=site-per-process'
+  ],
+  executablePath: process.env.CHROME_PATH || '/usr/bin/chromium-browser'
+}
   webVersionCache: {
     type: "remote",
     remotePath:
@@ -973,3 +979,4 @@ client.initialize().catch((err) => {
   console.error("❌ Failed to initialize client:", err);
 
 });
+
