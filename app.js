@@ -4,6 +4,34 @@ const mysql = require("mysql2/promise");
 const fs = require("fs").promises;
 const path = require("path");
 
+const express = require('express');
+require('dotenv').config();
+
+// Express server untuk health check
+const app = express();
+const PORT = process.env.PORT || 3000;
+
+app.get('/', (req, res) => {
+  res.send(`
+    <html>
+      <head>
+        <title>TOUCH #15 WhatsApp Bot</title>
+        <meta http-equiv="refresh" content="0; url=https://github.com/username/repo-name">
+      </head>
+      <body>
+        <h1>TOUCH #15 WhatsApp Bot is running!</h1>
+        <p>Status: ✅ Online</p>
+        <p>Uptime: ${process.uptime().toFixed(0)} seconds</p>
+        <p>Time: ${new Date().toLocaleString('id-ID')}</p>
+      </body>
+    </html>
+  `);
+});
+
+app.listen(PORT, () => {
+  console.log(`🌐 Health check server running on port ${PORT}`);
+});
+
 // Konfigurasi Database Connection Pool
 const dbConfig = {
   host: "103.219.251.163",
@@ -943,4 +971,5 @@ console.log("⏳ Please wait for QR code...");
 
 client.initialize().catch((err) => {
   console.error("❌ Failed to initialize client:", err);
+
 });
