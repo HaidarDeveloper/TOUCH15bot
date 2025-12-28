@@ -1,0 +1,22 @@
+{
+  "name": "touch15-whatsapp-bot",
+  "version": "1.0.0",
+  "description": "WhatsApp Bot untuk pendaftaran TOUCH #15",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "dev": "nodemon app.js",
+    "install-all": "npm install whatsapp-web.js qrcode-terminal mysql2 puppeteer"
+  },
+  "keywords": ["whatsapp", "bot", "touch15", "registration"],
+  "author": "Panitia TOUCH #15",
+  "license": "MIT",
+  "dependencies": {
+    "whatsapp-web.js": "^1.23.0",
+    "qrcode-terminal": "^0.12.0",
+    "mysql2": "^3.6.3"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1"
+  }
+}
