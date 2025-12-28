@@ -1,22 +1,31 @@
 {
   "name": "touch15-whatsapp-bot",
-  "version": "1.0.0",
-  "description": "WhatsApp Bot untuk pendaftaran TOUCH #15",
+  "version": "2.0.0",
+  "description": "WhatsApp Bot untuk pendaftaran TOUCH #15 - Replit Version",
   "main": "app.js",
   "scripts": {
     "start": "node app.js",
     "dev": "nodemon app.js",
-    "install-all": "npm install whatsapp-web.js qrcode-terminal mysql2 puppeteer"
+    "install-all": "npm install whatsapp-web.js qrcode-terminal mysql2 puppeteer",
+    "keep-alive": "node keep-alive.js",
+    "both": "concurrently 'npm:start' 'npm:keep-alive'"
   },
-  "keywords": ["whatsapp", "bot", "touch15", "registration"],
+  "keywords": ["whatsapp", "bot", "touch15", "registration", "replit"],
   "author": "Panitia TOUCH #15",
   "license": "MIT",
   "dependencies": {
     "whatsapp-web.js": "^1.23.0",
     "qrcode-terminal": "^0.12.0",
-    "mysql2": "^3.6.3"
+    "mysql2": "^3.6.3",
+    "express": "^4.18.2",
+    "dotenv": "^16.0.3",
+    "axios": "^1.6.0",
+    "concurrently": "^8.2.2"
   },
   "devDependencies": {
     "nodemon": "^3.0.1"
+  },
+  "engines": {
+    "node": ">=18.0.0"
   }
 }
