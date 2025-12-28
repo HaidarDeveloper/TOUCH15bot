@@ -1,0 +1,9 @@
+language = "nodejs"
+run = "npm start"
+
+[features]
+search = true
+tests = false
+
+[env]
+CHROME_PATH = "/nix/store/*-chromium-*/bin/chromium"
